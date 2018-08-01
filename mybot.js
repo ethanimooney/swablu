@@ -23,7 +23,7 @@ const command = args.shift().toLowerCase();
     if(command === "say"){
       let text = args.slice(1).join(" ");
       message.delete();
-      message.channelID("general").send(text);
+      message.channel.send(text);
     }
 
 });
