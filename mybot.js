@@ -20,10 +20,10 @@ const command = args.shift().toLowerCase();
   if (command === 'blah') {
     message.channel.send('Meh nah.');
     } else 
-  if(command === "say"){
+  if(command === "announce"){
     let text = args.slice(0).join(" ");
     message.delete();
-    message.channelID("general").send(text);
+    message.channel.send(text);
     }
 
 });
