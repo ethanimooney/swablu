@@ -18,7 +18,7 @@ const command = args.shift().toLowerCase();
     message.channel.send('Pong!');
     } else
   if (command === 'blah') {
-    message.channel.send('Meh.');
+    message.channel.send('Meh nah.');
     } else 
   if(command === "say"){
     let text = args.slice(0).join(" ");
