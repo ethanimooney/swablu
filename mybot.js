@@ -22,8 +22,8 @@ const command = args.shift().toLowerCase();
     } else 
     if(command === "say"){
       let text = args.slice(1).join(" ");
-      //message.delete();
-      message.channel.send(text);
+      message.delete();
+      message.channel.send("hello");
     }
 
 });
