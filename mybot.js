@@ -21,14 +21,13 @@ const command = args.shift().toLowerCase();
     message.channel.send('Meh nah.');
     } else 
   if(command === "announce"){
-    let text = args.slice(0).join(" ");
+
+    const [channelid, message] = args.splice(1);
+    const channelid = args.slice(0).join(" ");
+    let text = args.slice(1).join(" ");
     message.delete();
-    message.guild.channels.find("name", "general").send(text);
+    message.guild.channels.find("name", channelid).send(text);
     }
-
-//message.guild.channels.find
-//("name", "channel_name").sendMessage("blabla");
-
 
 });
 
