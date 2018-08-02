@@ -14,17 +14,11 @@ const command = args.shift().toLowerCase();
 
   if (!message.content.startsWith(config.prefix) || message.author.bot) return;
 
-  if(command === 'ping') {
-    message.channel.send('Pong!');
-    } else
-  if (command === 'blah') {
-    message.channel.send('Meh nah.');
-    } else 
-  if(command === "announce"){
-    let channelid = args.slice(0,1).join(" ");
-    let text = args.slice(1,2).join(" ");
-    message.delete();
-    message.guild.channels.find("name", channelid).send(text);
+  if(command === "announce"){ //announces a message to a given channel
+    let channelid = args.slice(0,1).join(" "); //selects first argument, the channelid
+    let text = args.slice(1,2).join(" "); //selects second argument, message
+    message.delete(); //deletes command invocation message
+    message.guild.channels.find("name", channelid).send(text); //sends message in the channel of the defined channelid
     }
 
 });
