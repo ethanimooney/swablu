@@ -23,8 +23,12 @@ const command = args.shift().toLowerCase();
   if(command === "announce"){
     let text = args.slice(0).join(" ");
     message.delete();
-    message.channel.send(text);
+    message.guild.channels.find("name", "general").send(text);
     }
+
+//message.guild.channels.find
+//("name", "channel_name").sendMessage("blabla");
+
 
 });
 
