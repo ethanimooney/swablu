@@ -21,7 +21,7 @@ const command = args.shift().toLowerCase();
     message.channel.send('Meh nah.');
     } else 
   if(command === "announce"){
-    let channelid = args.slice(1);
+    let channelid = args.slice(1).join(" ");
     let text = args.slice(2).join(" ");
     message.delete();
     message.guild.channels.find("name", channelid).send(text);
