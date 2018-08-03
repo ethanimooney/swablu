@@ -46,6 +46,7 @@ const command = args.shift().toLowerCase();
 
       kickMember.kick(reason.join(" ")).then(member => {
           message.reply(`${member.user.username} was succesfully kicked.`);
+      });
 
 
 
