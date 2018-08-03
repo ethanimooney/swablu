@@ -14,22 +14,6 @@ const command = args.shift().toLowerCase();
 
   if (!message.content.startsWith(config.prefix) || message.author.bot) return;
 
-  // if(command === "announce"){ //announces a message to a given channel
-  //   let channelid = args.slice(0,1).join(" "); //selects first argument, the channelid
-  //   let text = args.slice(1).join(" "); //selects second argument, message
-  //   message.delete(); //deletes command invocation message
-  //   message.guild.channels.find("name", channelid).send(text); //sends message in the channel of the defined channelid
-  //   } else
-  // if(command == "hello"){
-  //   message.channel.send("hello");
-  // } else 
-  // if(command == "kick"){
-  //   const modRole = message.guild.roles.find("name", "Professors");
-
-
-  // }
-
-
   switch(command){
 
     case "announce":
@@ -43,8 +27,25 @@ const command = args.shift().toLowerCase();
       message.channel.send("hello");
     break;
 
-   // case "kick":
-   //   const modRole = message.guild.roles.find("name", "Professors");
+    case "kick":
+      const modRole = message.guild.roles.find("name", "Professors");
+
+      if(!modRole)
+          return console.log("Mod role does not exist!");
+
+      if(!message.member.roles.has(modRole.id))
+          return message.reply("You cannot use that command, pleb.");
+
+      if (message.mentions.members.size === 0)
+          return message.reply("Please mention a user to kick");
+      
+      if (!message.guild.me.hasPermission("KICK_MEMBERS"))
+          return message.reply("");
+
+      const kickMember = message.mentions.members.first();
+
+      kickMember.kick(reason.join(" ")).then(member => {
+          message.reply(`${member.user.username} was succesfully kicked.`);
 
 
 
