@@ -36,7 +36,7 @@ const command = args.shift().toLowerCase();
       return message.reply("For what reason? Try again.");
     }
     if (!message.guild.me.hasPermission("KICK_MEMBERS")){}
-    return message.reply("");
+    return message.reply(" hello");
     }
 
     kickMember.kick(reason.join(" ")).then(member => {
