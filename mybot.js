@@ -28,12 +28,17 @@ const command = args.shift().toLowerCase();
     break;
 
     case "kick": //kicks user, citing the reason given by the kicker
-
+    
+    const modRole = message.guild.roles.find("name", "Mods");
     let kickMember = message.mentions.members.first();
     let reason = args.slice(1).join(" "); 
 
-    if (!message.guild.me.hasPermission("KICK_MEMBERS")){
-    return message.reply(" hello");
+    if (!modRole){
+      return console.log("The Mods role does not exist");
+    }
+
+    if (!message.member.roles.has(modRole.id)){
+      return message.reply("You can't use this command.");
     }
 
     if(reason == ""){
