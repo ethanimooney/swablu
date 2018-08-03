@@ -16,7 +16,7 @@ const command = args.shift().toLowerCase();
 
   switch(command){
 
-    case "announce":
+    case "announce": //announces message specified in speified channel
       let channelid = args.slice(0,1).join(" "); //selects first argument, the channelid
       let text = args.slice(1).join(" "); //selects second argument, message
       message.delete(); //deletes command invocation message
