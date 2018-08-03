@@ -25,12 +25,13 @@ const command = args.shift().toLowerCase();
 
     case "kick": //kicks user, citing the reason given by the kicker
     
-    const modRole = message.guild.roles.find("name", "admin.dev");
+    const modRole = message.guild.roles.find("name", "professors");
+    const botRole = message.guild.roles.find("name", "bots");
     let kickMember = message.mentions.members.first();
     let reason = args.slice(1).join(" "); 
     message.delete();
 
-    if(kickMember.roles.has(modRole.id)){ //blocks kicking of a mod
+    if(kickMember.roles.has(modRole.id || botRole.id)){ //blocks kicking of a mod
       message.reply("You can't kick a mod, fool.")
     }
     if (!modRole){ //checks if there is a mod role in the server
