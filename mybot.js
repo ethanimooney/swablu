@@ -32,22 +32,19 @@ const command = args.shift().toLowerCase();
     const modRole = message.guild.roles.find("name", "admin.dev");
     let kickMember = message.mentions.members.first();
     let reason = args.slice(1).join(" "); 
-
     message.delete();
 
-    if (!modRole){
+    if (!modRole){ //checks if there is a mod role in the server
       return console.log("The Mods role does not exist");
     }
-
-    if (!message.member.roles.has(modRole.id)){
+    if (!message.member.roles.has(modRole.id)){ //checks if command user is mod
       return message.reply("You can't use this command.");
     }
-
-    if(reason == ""){
+    if(reason == ""){ //if no reason is supplied it asks for one
       return message.reply("For what reason? Try again.");
     }
 
-    kickMember.kick(reason).then(member => {
+    kickMember.kick(reason).then(member => { //kicks user and gives reason why
         message.channel.send(`${kickMember} was succesfully kicked for "${reason}"`);
     });
 
