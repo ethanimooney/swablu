@@ -28,27 +28,9 @@ const command = args.shift().toLowerCase();
     break;
 
     case "kick":
-      const modRole = message.guild.roles.find("name", "Professors");
-
-      if(!modRole)
-          return console.log("Mod role does not exist!");
-
-      if(!message.member.roles.has(modRole.id))
-          return message.reply("You cannot use that command, pleb.");
-
-      if (message.mentions.members.size === 0)
-          return message.reply("Please mention a user to kick");
-      
-      if (!message.guild.me.hasPermission("KICK_MEMBERS"))
-          return message.reply("");
-
-      const kickMember = message.mentions.members.first();
-
-      kickMember.kick(reason.join(" ")).then(member => {
-          message.reply(`${member.user.username} was succesfully kicked.`);
-      });
-
-
+    
+    let member = message.mentions.members.first();
+    member.kick();
 
   }
 
