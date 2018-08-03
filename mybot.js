@@ -19,7 +19,10 @@ const command = args.shift().toLowerCase();
     let text = args.slice(1).join(" "); //selects second argument, message
     message.delete(); //deletes command invocation message
     message.guild.channels.find("name", channelid).send(text); //sends message in the channel of the defined channelid
-    }
+    } else
+  if(command == "hello"){
+    message.channel.send("hello");
+  }
 
 });
 
