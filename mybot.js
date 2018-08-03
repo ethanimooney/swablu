@@ -12,7 +12,7 @@ client.on("message", (message) => {
 const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
 const command = args.shift().toLowerCase();
 
-  if (!message.content.startsWith(config.prefix) || message.author.bot) return;
+  if (!message.content.startsWith(config.prefix) || message.author.bot) return;{
 
   switch(command){
 
@@ -29,9 +29,19 @@ const command = args.shift().toLowerCase();
 
     case "kick": //kicks user, citing the reason given by the kicker
 
-    let member = message.mentions.members.first();
+    let kickMember = message.mentions.members.first();
     let reason = args.slice(1).join(" "); 
-    member.kick();
+
+    if(reason == null){
+      return message.reply("For what reason? Try again.");
+    }
+    if (!message.guild.me.hasPermission("KICK_MEMBERS")){}
+    return message.reply("");
+    }
+
+    kickMember.kick(reason.join(" ")).then(member => {
+        message.reply(`${member.user.username} was succesfully kicked for`, reason);
+    });
 
   }
 
