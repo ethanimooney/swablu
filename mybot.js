@@ -46,7 +46,7 @@ const command = args.shift().toLowerCase();
     }
 
     kickMember.kick(reason).then(member => {
-        message.reply(`${kickMember} was succesfully kicked for "${reason}"`);
+        message.channel.send(`${kickMember} was succesfully kicked for "${reason}"`);
     });
 
   }
