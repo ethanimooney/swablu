@@ -27,9 +27,10 @@ const command = args.shift().toLowerCase();
       message.channel.send("hello");
     break;
 
-    case "kick":
-    
+    case "kick": //kicks user, citing the reason given by the kicker
+
     let member = message.mentions.members.first();
+    let reason = args.slice(1).join(" "); 
     member.kick();
 
   }
