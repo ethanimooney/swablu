@@ -23,10 +23,6 @@ const command = args.shift().toLowerCase();
       message.guild.channels.find("name", channelid).send(text); //sends message in the channel of the defined channelid
     break;
 
-    case "hello":
-      message.channel.send("hello");
-    break;
-
     case "kick": //kicks user, citing the reason given by the kicker
     
     const modRole = message.guild.roles.find("name", "admin.dev");
@@ -34,7 +30,7 @@ const command = args.shift().toLowerCase();
     let reason = args.slice(1).join(" "); 
     message.delete();
 
-    if(kickMember.roles.has(modRole.id)){
+    if(kickMember.roles.has(modRole.id)){ //blocks kicking of a mod
       message.reply("You can't kick a mod, fool.")
     }
     if (!modRole){ //checks if there is a mod role in the server
