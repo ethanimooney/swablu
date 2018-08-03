@@ -29,7 +29,7 @@ const command = args.shift().toLowerCase();
 
     case "kick": //kicks user, citing the reason given by the kicker
     
-    const modRole = message.guild.roles.find("name", "Mods");
+    const modRole = message.guild.roles.find("name", "admin.dev");
     let kickMember = message.mentions.members.first();
     let reason = args.slice(1).join(" "); 
 
