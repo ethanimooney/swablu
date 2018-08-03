@@ -40,7 +40,7 @@ const command = args.shift().toLowerCase();
     // }
 
     kickMember.kick(reason).then(member => {
-        message.reply(`${member.user.username} was succesfully kicked for `, reason);
+        message.reply(`${member.user.username} was succesfully kicked for `).send(reason);
     });
 
   }
