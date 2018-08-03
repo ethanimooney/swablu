@@ -12,7 +12,7 @@ client.on("message", (message) => {
 const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
 const command = args.shift().toLowerCase();
 
-  if (!message.content.startsWith(config.prefix) || message.author.bot) return;{
+  if (!message.content.startsWith(config.prefix) || message.author.bot) return;
 
   switch(command){
 
@@ -35,7 +35,7 @@ const command = args.shift().toLowerCase();
     if(reason == null){
       return message.reply("For what reason? Try again.");
     }
-    if (!message.guild.me.hasPermission("KICK_MEMBERS")){}
+    if (!message.guild.me.hasPermission("KICK_MEMBERS")){
     return message.reply(" hello");
     }
 
