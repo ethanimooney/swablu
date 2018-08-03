@@ -39,7 +39,7 @@ const command = args.shift().toLowerCase();
     // return message.reply(" hello");
     // }
 
-    kickMember.kick(reason.join(" ")).then(member => {
+    kickMember.kick(reason).then(member => {
         message.reply(`${member.user.username} was succesfully kicked for `);
     });
 
