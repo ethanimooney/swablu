@@ -32,12 +32,13 @@ const command = args.shift().toLowerCase();
     let kickMember = message.mentions.members.first();
     let reason = args.slice(1).join(" "); 
 
+    if (!message.guild.me.hasPermission("KICK_MEMBERS")){
+    return message.reply(" hello");
+    }
+
     if(reason == ""){
       return message.reply("For what reason? Try again.");
     }
-    // if (!message.guild.me.hasPermission("KICK_MEMBERS")){
-    // return message.reply(" hello");
-    // }
 
     kickMember.kick(reason).then(member => {
         message.reply(`${member.user.username} was succesfully kicked for ${reason}`);
