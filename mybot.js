@@ -34,6 +34,9 @@ const command = args.shift().toLowerCase();
     let reason = args.slice(1).join(" "); 
     message.delete();
 
+    if(kickMember.roles.has(modRole.id)){
+      message.reply("You can't kick a mod, fool.")
+    }
     if (!modRole){ //checks if there is a mod role in the server
       return console.log("The Mods role does not exist");
     }
