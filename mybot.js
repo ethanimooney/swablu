@@ -33,6 +33,8 @@ const command = args.shift().toLowerCase();
     let kickMember = message.mentions.members.first();
     let reason = args.slice(1).join(" "); 
 
+    message.delete();
+
     if (!modRole){
       return console.log("The Mods role does not exist");
     }
