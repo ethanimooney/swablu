@@ -32,7 +32,7 @@ const command = args.shift().toLowerCase();
     let kickMember = message.mentions.members.first();
     let reason = args.slice(1).join(" "); 
 
-    if(reason == null){
+    if(reason == ""){
       return message.reply("For what reason? Try again.");
     }
     if (!message.guild.me.hasPermission("KICK_MEMBERS")){
