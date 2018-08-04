@@ -61,7 +61,7 @@ const command = args.shift().toLowerCase();
 
     const swablu = client.emojis.find("name", "swablu");//creates swablu emoji
    
-    if(!message.member.hasPermission("MANAGE_MESSAGES")) return errors.noPerms(message, "MANAGE_MESSAGES");
+   // if(!message.member.hasPermission("MANAGE_MESSAGES")) return errors.noPerms(message, "MANAGE_MESSAGES");
 
     if(!args[0]) return message.channel.send("Erm, how many? Try again.");//if no amount to delete is given, throws error
     message.channel.bulkDelete((args[0]+1)).then(() => {//does the deleting
