@@ -7,11 +7,13 @@ client.on("ready", () => {
   console.log("I am ready!");
 });
 
-bot.on('guildMemberAdd', member => {
-  member.guild.channels.get('channelID').send(", welcome to **Edmond Pokémon League**, type !junior, !senior, !master, or !parent depending on what you are!\n- Check out all of the rules of the road in #rules\n- To learn about upcoming tournaments or League Challenges check out #upcoming\n- If you have any questions feel free to dm a professor!\n- Enjoy your time and have fun!");
-});
+
 
 client.on("message", (message) => {
+
+  bot.on('guildMemberAdd', member => {
+    member.guild.channels.get('channelID').send(", welcome to **Edmond Pokémon League**, type !junior, !senior, !master, or !parent depending on what you are!\n- Check out all of the rules of the road in #rules\n- To learn about upcoming tournaments or League Challenges check out #upcoming\n- If you have any questions feel free to dm a professor!\n- Enjoy your time and have fun!");
+  });
 
 const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
 const command = args.shift().toLowerCase();
