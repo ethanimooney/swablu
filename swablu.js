@@ -45,7 +45,7 @@ const command = args.shift().toLowerCase();
     if (!modRole){ //checks if there is a mod role in the server
       return console.log("The Mods role does not exist");
     }
-    if (!message.channel.permissionsFor(message.author).hasPermission("KICK_MEMBERS")){ //checks if command user has permission to kick
+    if (!message.guild.me.hasPermission("KICK_MEMBERS")){ //checks if command user has permission to kick
       return message.reply("You can't use this command.");
     }
     if(reason == ""){ //if no reason is supplied it asks for one
