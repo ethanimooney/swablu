@@ -60,22 +60,16 @@ const command = args.shift().toLowerCase();
     case "clear"://clears a specified amount of messages from chat
 
     const swablu = client.emojis.find("name", "swablu");//creates swablu emoji
-    const modRole = message.guild.roles.find("name", "professors"); //finds mod role
-
-    if (!modRole){ //checks if there is a mod role in the server
-      return console.log("The Mods role does not exist");
-    }
-    if (!message.member.roles.has(modRole.id)){ //checks if command user is mod
-      return message.channel.send("You can't use this command.");
-    }
    
+    if(!message.member.hasPermission("MANAGE_MESSAGES")) return errors.noPerms(message, "MANAGE_MESSAGES");
+
     if(!args[0]) return message.channel.send("Erm, how many? Try again.");//if no amount to delete is given, throws error
     message.channel.bulkDelete((args[0]+1)).then(() => {//does the deleting
     message.channel.send(`Cleared ${args[0]} messages. ${swablu}`).then(msg => msg.delete(5000));//sends conformation, then deletes conformation
   });
 
 
-    
+
 
   }
 
