@@ -62,6 +62,9 @@ const command = args.shift().toLowerCase();
     const swablu = client.emojis.find("name", "swablu");//creates swablu emoji
     const modRole = message.guild.roles.find("name", "professors"); //finds mod role
 
+    if (!modRole){ //checks if there is a mod role in the server
+      return console.log("The Mods role does not exist");
+    }
     if (!message.member.roles.has(modRole.id)){ //checks if command user is mod
       return message.reply("You can't use this command.");
     }
