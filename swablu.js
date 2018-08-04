@@ -61,9 +61,9 @@ const command = args.shift().toLowerCase();
 
     const swablu = client.emojis.find("name", "swablu");//creates swablu emoji
 
-    let clearNumber = (args[0] + 1);
+    let clearNumber = (args[0] + 1); //sets number to clear one higher so it deletes invocation message also
    
-    message.delete();//deletes command invocation message
+    //message.delete();//deletes command invocation message
     if(!args[0]) return message.channel.send("Erm, how many? Try again.");//if no amount to delete is given, throws error
     message.channel.bulkDelete(clearNumber).then(() => {//does the deleting
     message.channel.send(`Cleared ${args[0]} messages. ${swablu}`).then(msg => msg.delete(5000));//sends conformation, then deletes conformation
