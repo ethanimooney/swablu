@@ -22,12 +22,12 @@ const command = args.shift().toLowerCase();
       let sendChannel = channelid.guild.channels.find("name", channelid);
       message.delete(); //deletes command invocation message
 
-      if(!sendChannel == guild.channels.find("name", channelid)){
-        return message.reply("looks like you did't specify a channel or you spelled it wrong, try again.");
-      } 
-      //if(text = ""){
-      //  return message.reply("erm, what am I supposed to say? Try again.");
-     // }
+      //if(!sendChannel == guild.channels.find("name", channelid)){
+      //  return message.reply("looks like you did't specify a channel or you spelled it wrong, try again.");
+      //} 
+      if(text = ""){
+        return message.reply("erm, what am I supposed to say? Try again.");
+     }
 
       message.guild.channels.find("name", channelid).send(text); //sends message in the channel of the defined channelid
     break;
