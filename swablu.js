@@ -63,7 +63,7 @@ const command = args.shift().toLowerCase();
    
   if(!args[0]) return message.channel.send("Erm, how many? Try again.");
   message.channel.bulkDelete(args[0]).then(() => {
-    message.channel.send(`Cleared ${args[0]} messages. ${swablu}`).then(msg => msg.delete(5000));
+    message.channel.send(`Cleared ${args[0]} messages. ${swablu}`).then(message => messge.delete());
   });
 
 
