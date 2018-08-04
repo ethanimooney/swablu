@@ -66,7 +66,7 @@ const command = args.shift().toLowerCase();
       return console.log("The Mods role does not exist");
     }
     if (!message.member.roles.has(modRole.id)){ //checks if command user is mod
-      return message.reply("You can't use this command.");
+      return message.channel.send("You can't use this command.");
     }
    
     if(!args[0]) return message.channel.send("Erm, how many? Try again.");//if no amount to delete is given, throws error
