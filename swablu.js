@@ -19,15 +19,15 @@ const command = args.shift().toLowerCase();
     case "announce": //announces message specified in speified channel
       let channelid = args.slice(0,1).join(" "); //selects first argument, the channelid
       let text = args.slice(1).join(" "); //selects second argument, message
-      let sendChannel = channelid.guild.channels.find("name", channelid);
+      //let sendChannel = channelid.guild.channels.find("name", channelid);
       message.delete(); //deletes command invocation message
 
       //if(!sendChannel == guild.channels.find("name", channelid)){
       //  return message.reply("looks like you did't specify a channel or you spelled it wrong, try again.");
       //} 
-      if(text = ""){
-        return message.reply("erm, what am I supposed to say? Try again.");
-     }
+      //if(text = ""){
+      //  return message.reply("erm, what am I supposed to say? Try again.");
+     //}
 
       message.guild.channels.find("name", channelid).send(text); //sends message in the channel of the defined channelid
     break;
