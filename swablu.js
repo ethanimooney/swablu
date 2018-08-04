@@ -60,10 +60,10 @@ const command = args.shift().toLowerCase();
     case "clear"://clears a specified amount of messages from chat
 
     const swablu = client.emojis.find("name", "swablu");//creates swablu emoji
-    let number = args.slice(0);
+    let number = args.slice(0).join(" ");
     message.delete();
     
-    if(!number) return message.channel.send("Erm, how many? Try again.");//if no amount to delete is given, throws error
+    if(number == "") return message.channel.send("Erm, how many? Try again.");//if no amount to delete is given, throws error
     message.channel.bulkDelete(number).then(() => {//does the deleting
     message.channel.send(`Cleared ${number} messages. ${swablu}`).then(msg => msg.delete(5000));//sends conformation, then deletes conformation
     //message.delete();//deletes command invocation message
