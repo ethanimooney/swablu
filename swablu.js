@@ -22,9 +22,9 @@ const command = args.shift().toLowerCase();
       //let sendChannel = channelid.guild.channels.find("name", channelid);
      
 
-      //if(!sendChannel == guild.channels.find("name", channelid)){
-      //  return message.reply("looks like you did't specify a channel or you spelled it wrong, try again.");
-      //} 
+      if(!channelid == guild.channels.find("name", channelid)){
+        return message.reply("looks like you did't specify a channel or you spelled it wrong, try again.");
+      } 
       if(text == ""){
         message.delete();
         return message.reply("erm, what am I supposed to say? Try again.");
