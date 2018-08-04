@@ -20,11 +20,10 @@ const command = args.shift().toLowerCase();
       let channelid = args.slice(0,1).join(" "); //selects first argument, the channelid
       let text = args.slice(1).join(" "); //selects second argument, message
      
-      if(!message.guild.channels.find("name", channelid)){
+      if(!message.guild.channels.find("name", channelid)){//if specified channel does not exist or one is not specified, throws error
         return message.reply("looks like you did't specify a channel or you spelled it wrong, try again.");
       }
-      if(text == ""){
-        message.delete();
+      if(text == ""){//if no text is given, throws error
         return message.reply("erm, what am I supposed to say? Try again.");
      }
 
