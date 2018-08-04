@@ -62,7 +62,7 @@ const command = args.shift().toLowerCase();
     const swablu = client.emojis.find("name", "swablu");//creates swablu emoji
    
     if(!args[0]) return message.channel.send("Erm, how many? Try again.");//if no amount to delete is given, throws error
-    message.channel.bulkDelete((args[0]+1)).then(() => {//does the deleting
+    message.channel.bulkDelete((args[0])).then(() => {//does the deleting
     message.channel.send(`Cleared ${args[0]} messages. ${swablu}`).then(msg => msg.delete(5000));//sends conformation, then deletes conformation
     //message.delete();//deletes command invocation message
   });
