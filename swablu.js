@@ -58,8 +58,8 @@ const command = args.shift().toLowerCase();
     break;
 
     case "clear":
-    
-    if (message.member.hasPermission("MANAGE_MESSAGES")) {
+
+    if (message.member.roles.has(modRold.id)) {
       message.channel.fetchMessages()
          .then(function(list){
               message.channel.bulkDelete(list);
