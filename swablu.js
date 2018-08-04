@@ -58,6 +58,14 @@ const command = args.shift().toLowerCase();
     break;
 
     case "clear":
+    
+    if (message.member.hasPermission("MANAGE_MESSAGES")) {
+      message.channel.fetchMessages()
+         .then(function(list){
+              message.channel.bulkDelete(list);
+          }, function(err){message.channel.send("ERROR: ERROR CLEARING CHANNEL.")})                        
+  }
+}
 
     
 
