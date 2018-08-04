@@ -45,7 +45,7 @@ const command = args.shift().toLowerCase();
     if (!modRole){ //checks if there is a mod role in the server
       return console.log("The Mods role does not exist");
     }
-    if (!message.member.roles.has(modRole.id)){ //checks if command user is mod
+    if (!message.channel.permissionsFor(message.author).hasPermission("MANAGE_MESSAGES")){ //checks if command user has permission to kick
       return message.reply("You can't use this command.");
     }
     if(reason == ""){ //if no reason is supplied it asks for one
@@ -55,6 +55,11 @@ const command = args.shift().toLowerCase();
     kickMember.kick(reason).then(member => { //kicks user and gives reason why
         message.channel.send(`${kickMember} was succesfully kicked for "${reason}"`);
     });
+    break;
+
+    case "clear":
+
+
 
   }
 
