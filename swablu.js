@@ -25,9 +25,10 @@ const command = args.shift().toLowerCase();
       //if(!sendChannel == guild.channels.find("name", channelid)){
       //  return message.reply("looks like you did't specify a channel or you spelled it wrong, try again.");
       //} 
-      if(text = ""){
+      if(text == ""){
         return message.reply("erm, what am I supposed to say? Try again.");
      }
+
       message.delete(); //deletes command invocation message
       message.guild.channels.find("name", channelid).send(text); //sends message in the channel of the defined channelid
     break;
