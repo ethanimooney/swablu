@@ -8,8 +8,16 @@ client.on("ready", () => {
 });
 
 
-client.on('guildMemberAdd', member => {
-  member.guild.channels.get('channelID').send(", welcome to **Edmond Pokémon League**, type !junior, !senior, !master, or !parent depending on what you are!\n- Check out all of the rules of the road in #rules\n- To learn about upcoming tournaments or League Challenges check out #upcoming\n- If you have any questions feel free to dm a professor!\n- Enjoy your time and have fun!");
+client.on("guildMemberAdd", (member) => {
+  const guild = member.guild;
+  if (!newUsers[guild.id]) newUsers[guild.id] = new Discord.Collection();
+  newUsers[guild.id].set(member.id, member.user);
+
+  if (newUsers[guild.id].size > 0) {
+    const userlist = newUsers[guild.id].map(u => u.toString()).join(" ");
+    guild.channels.find("name", "general").send(newUsers[0], ", welcome to **Edmond Pokémon League**, type !junior, !senior, !master, or !parent depending on what you are!\n- Check out all of the rules of the road in #rules\n- To learn about upcoming tournaments or League Challenges check out #upcoming\n- If you have any questions feel free to dm a professor!\n- Enjoy your time and have fun!");
+    newUsers[guild.id].clear();
+  }
 });
 
 client.on("message", (message) => {
