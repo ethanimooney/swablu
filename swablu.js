@@ -45,7 +45,7 @@ const command = args.shift().toLowerCase();
     if (!modRole){ //checks if there is a mod role in the server
       return console.log("The Mods role does not exist");
     }
-    if (!message.guild.me.hasPermission("KICK_MEMBERS")){ //checks if command user has permission to kick
+    if (!message.member.roles.has(modRole.id)){ //checks if command user is mod
       return message.reply("You can't use this command.");
     }
     if(reason == ""){ //if no reason is supplied it asks for one
@@ -59,7 +59,7 @@ const command = args.shift().toLowerCase();
 
     case "clear":
 
-
+    
 
   }
 
