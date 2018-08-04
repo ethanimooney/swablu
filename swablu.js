@@ -59,14 +59,6 @@ const command = args.shift().toLowerCase();
 
     case "clear":
 
-    const modRole = message.guild.roles.find("name", "professors"); //finds mod role
-
-    if (message.member.roles.has(modRole.id)) {
-      message.channel.fetchMessages()
-         .then(function(list){
-              message.channel.bulkDelete(list);
-          }, function(err){message.channel.send("ERROR: ERROR CLEARING CHANNEL.")})                        
-  }
 }
 
     
