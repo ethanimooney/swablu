@@ -57,10 +57,6 @@ const command = args.shift().toLowerCase();
     });
     break;
 
-    case "clear":
-
-}
-
     
 
   }
