@@ -26,6 +26,7 @@ const command = args.shift().toLowerCase();
       //  return message.reply("looks like you did't specify a channel or you spelled it wrong, try again.");
       //} 
       if(text == ""){
+        message.delete();
         return message.reply("erm, what am I supposed to say? Try again.");
      }
 
