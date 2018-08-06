@@ -70,31 +70,31 @@ const command = args.shift().toLowerCase();
     break;
 
 
-  case "ban":
+    case "ban":
 
-  const modRole = message.guild.roles.find("name", "professors");//finds mod role
-  const botRole = message.guild.roles.find("name", "bots");//finds botmod role
-  let banMember = message.mentions.members.first();
-  let reason = args.slice(1).join(" ");
-  message.delete();
+    const modRole = message.guild.roles.find("name", "professors");//finds mod role
+    const botRole = message.guild.roles.find("name", "bots");//finds botmod role
+    let banMember = message.mentions.members.first();
+    let reason = args.slice(1).join(" ");
+    message.delete();
 
-  if(banMember.roles.has(modRole.id || botRole.id)){
-    message.reply("In Soviet Russia you don't ban mods. Mods ban you.");
-  }
-  if(!modRole){
-    return console.log("The Mods role does not exist.");
-  }
-  if(!message.member.roles.has(modRole.id)){
-    return message.reply("You do not have enough power to use this command.");
-  }
-  if(reason == ""){
-    return message.reply("Uhhh why am I kicking them? Try again.");
-  }
+    if(banMember.roles.has(modRole.id || botRole.id)){
+      message.reply("In Soviet Russia you don't ban mods. Mods ban you.");
+    }
+    if(!modRole){
+      return console.log("The Mods role does not exist.");
+    }
+    if(!message.member.roles.has(modRole.id)){
+      return message.reply("You do not have enough power to use this command.");
+    }
+    if(reason == ""){
+      return message.reply("Uhhh why am I kicking them? Try again.");
+    }
 
-  banMember.ban(reason).then(member =>{
-    message.channel.send(`${banMember} was succesfully banned for "${reason}"`);
-  });
-  break;
+    banMember.ban(reason).then(member =>{
+      message.channel.send(`${banMember} was succesfully banned for "${reason}"`);
+    });
+    break;
 
 
 
