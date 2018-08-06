@@ -70,7 +70,7 @@ const command = args.shift().toLowerCase();
     break;
 
 
-    case "ban":
+    /* case "ban":
 
     const modRole = message.guild.roles.find("name", "professors");//finds mod role
     const botRole = message.guild.roles.find("name", "bots");//finds botmod role
@@ -91,10 +91,10 @@ const command = args.shift().toLowerCase();
       return message.reply("Uhhh why am I kicking them? Try again.");
     }
 
-    // banMember.ban(reason).then(member => {
-    //   message.channel.send(`${banMember} was succesfully banned for "${reason}"`);
-    // });
-    break;
+    banMember.ban(reason).then(member => {
+      message.channel.send(`${banMember} was succesfully banned for "${reason}"`);
+    });
+    break; */
 
 
 
