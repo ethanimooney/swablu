@@ -91,9 +91,9 @@ const command = args.shift().toLowerCase();
       return message.reply("Uhhh why am I kicking them? Try again.");
     }
 
-    banMember.ban(reason).then(member =>{
-      message.channel.send(`${banMember} was succesfully banned for "${reason}"`);
-    });
+    // banMember.ban(reason).then(member => {
+    //   message.channel.send(`${banMember} was succesfully banned for "${reason}"`);
+    // });
     break;
 
 
