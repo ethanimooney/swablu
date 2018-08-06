@@ -31,18 +31,6 @@ const command = args.shift().toLowerCase();
       message.guild.channels.find("name", channelid).send(text); //sends message in the channel of the defined channelid
     break;
 
-    case "clear"://clears a specified amount of messages from chat
-
-    const swablu = client.emojis.find("name", "swablu");//creates swablu emoji
-
-    let clearNumber = (args[0] + 1); //sets number to clear one higher so it deletes invocation message also
-   
-    if(!args[0]) return message.channel.send("Erm, how many? Try again.");//if no amount to delete is given, throws error
-    message.channel.bulkDelete(clearNumber).then(() => {//does the deleting
-    message.channel.send(`Cleared ${args[0]} messages. ${swablu}`).then(msg => msg.delete(5000));//sends conformation, then deletes conformation
-    });
-    break;
-
     case "kick": //kicks user, citing the reason given by the kicker
     
     const modRole = message.guild.roles.find("name", "professors"); //finds mod role
@@ -55,7 +43,7 @@ const command = args.shift().toLowerCase();
       message.reply("You can't kick a mod, fool.")
     }
     if (!modRole){ //checks if there is a mod role in the server
-      return console.log("The Mods role does not exist.");
+      return console.log("The Mods role does not exist");
     }
     if (!message.member.roles.has(modRole.id)){ //checks if command user is mod
       return message.reply("You can't use this command.");
@@ -69,32 +57,21 @@ const command = args.shift().toLowerCase();
     });
     break;
 
+    case "clear"://clears a specified amount of messages from chat
 
-    /* case "ban":
+    const swablu = client.emojis.find("name", "swablu");//creates swablu emoji
 
-    const modRole = message.guild.roles.find("name", "professors");//finds mod role
-    const botRole = message.guild.roles.find("name", "bots");//finds botmod role
-    let banMember = message.mentions.members.first();
-    let reason = args.slice(1).join(" ");
-    message.delete();
+    let clearNumber = (args[0] + 1); //sets number to clear one higher so it deletes invocation message also
+   
+    if(!args[0]) return message.channel.send("Erm, how many? Try again.");//if no amount to delete is given, throws error
+    message.channel.bulkDelete(clearNumber).then(() => {//does the deleting
+    message.channel.send(`Cleared ${args[0]} messages. ${swablu}`).then(msg => msg.delete(5000));//sends conformation, then deletes conformation
+  });
+  break;
 
-    if(banMember.roles.has(modRole.id || botRole.id)){
-      message.reply("In Soviet Russia you don't ban mods. Mods ban you.");
-    }
-    if(!modRole){
-      return console.log("The Mods role does not exist.");
-    }
-    if(!message.member.roles.has(modRole.id)){
-      return message.reply("You do not have enough power to use this command.");
-    }
-    if(reason == ""){
-      return message.reply("Uhhh why am I kicking them? Try again.");
-    }
+  case "ban":
 
-    banMember.ban(reason).then(member => {
-      message.channel.send(`${banMember} was succesfully banned for "${reason}"`);
-    });
-    break; */
+  
 
 
 
