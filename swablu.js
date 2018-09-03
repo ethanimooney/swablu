@@ -65,7 +65,7 @@ const command = args.shift().toLowerCase();
    
     if(!args[0]) return message.channel.send("Erm, how many? Try again.");//if no amount to delete is given, throws error
     message.channel.bulkDelete(args[0]).then(() => {//does the deleting
-    message.channel.send(`Cleared ${args[0]} messages. ${swablu}`);//sends conformation, then deletes conformation
+    message.channel.send(`Cleared ${args[0]} messages. ${swablu}`).then(msg => msg.delete(1));//sends conformation, then deletes conformation
   });
   break;
 
