@@ -61,8 +61,8 @@ const command = args.shift().toLowerCase();
 
     const swablu = client.emojis.find("name", "swablu");//creates swablu emoji
 
-    let clearNumber = parseInt(args[0], 10);//sets number to clear one higher so it deletes invocation message also
-   let actualNumber = (clearNumber + 1);
+    let clearNumber = parseInt(args[0], 10);//converts number to an int
+   let actualNumber = (clearNumber + 1);//sets delete number to 1 higher so it delets command invocation
 
 
     if(!args[0]){
@@ -72,10 +72,6 @@ const command = args.shift().toLowerCase();
     message.channel.send(`Cleared ${args[0]} messages. ${swablu}`).then(msg => msg.delete(5000));//sends conformation, then deletes conformation
   });
   break;
-
-  
-
-
 
   }
 
