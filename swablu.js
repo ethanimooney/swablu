@@ -60,16 +60,19 @@ const command = args.shift().toLowerCase();
     case "clear"://clears a specified amount of messages from chat
 
     const swablu = client.emojis.find("name", "swablu");//creates swablu emoji
-    const modRole = message.guild.roles.find("name", "professors"); //finds mod role
+
 
     let clearNumber = parseInt(args[0], 10);//converts number to an int
-    let actualNumber = (clearNumber + 1);//sets delete number to 1 higher so it delets command invocation
+    let actualNumber = (clearNumber + 1);//sets delete number to 1 higher so it deletes command invocation
 
-    if (!modRole){ //checks if there is a mod role in the server
-      return console.log("The Mods role does not exist");
-    }
-    if (!message.member.roles.has(modRole.id)){ //checks if command user is mod
-      return message.reply("You can't use this command.");
+    if (!message.channel.permissionsFor(message.author).hasPermission("MANAGE_MESSAGES")) {
+      message.channel.sendMessage("Sorry, you don't have the permission to execute the command \""+message.content+"\"");
+      console.log("Sorry, you don't have the permission to execute the command \""+message.content+"\"");
+      return;
+    } else if (!message.channel.permissionsFor(bot.user).hasPermission("MANAGE_MESSAGES")) {
+      message.channel.sendMessage("Sorry, I don't have the permission to execute the command \""+message.content+"\"");
+      console.log("Sorry, I don't have the permission to execute the command \""+message.content+"\"");
+      return;
     }
     if(!args[0]){
       return message.channel.send("Erm, how many? Try again.");
