@@ -65,15 +65,6 @@ const command = args.shift().toLowerCase();
     let clearNumber = parseInt(args[0], 10);//converts number to an int
     let actualNumber = (clearNumber + 1);//sets delete number to 1 higher so it deletes command invocation
 
-    if (!message.channel.permissionsFor(message.author).hasPermission("MANAGE_MESSAGES")) {
-      message.channel.sendMessage("Sorry, you don't have the permission to execute the command \""+message.content+"\"");
-      console.log("Sorry, you don't have the permission to execute the command \""+message.content+"\"");
-      return;
-    } else if (!message.channel.permissionsFor(bot.user).hasPermission("MANAGE_MESSAGES")) {
-      message.channel.sendMessage("Sorry, I don't have the permission to execute the command \""+message.content+"\"");
-      console.log("Sorry, I don't have the permission to execute the command \""+message.content+"\"");
-      return;
-    }
     if(!args[0]){
       return message.channel.send("Erm, how many? Try again.");
     }//if no amount to delete is given, throws error
