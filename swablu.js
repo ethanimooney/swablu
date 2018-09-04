@@ -59,6 +59,16 @@ const command = args.shift().toLowerCase();
 
     case "clear"://clears a specified amount of messages from chat
 
+    if (!message.channel.permissionsFor(message.author).hasPermission("MANAGE_MESSAGES")) {
+      message.channel.sendMessage("Sorry, you don't have the permission to execute the command \""+message.content+"\"");
+      console.log("Sorry, you don't have the permission to execute the command \""+message.content+"\"");
+      return;
+    } else if (!message.channel.permissionsFor(bot.user).hasPermission("MANAGE_MESSAGES")) {
+      message.channel.sendMessage("Sorry, I don't have the permission to execute the command \""+message.content+"\"");
+      console.log("Sorry, I don't have the permission to execute the command \""+message.content+"\"");
+      return;
+    }
+
     const swablu = client.emojis.find("name", "swablu");//creates swablu emoji
 
 
