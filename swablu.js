@@ -77,6 +77,7 @@ const command = args.shift().toLowerCase();
   
     const juniorRole  = message.guild.roles.find(role => role.name === "juniors");
     member.addRole(juniorRole).catch(console.error);
+    console.log(`Got ${membersWithRole.size} members with that role.`);
   
 
   break;
