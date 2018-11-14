@@ -6,6 +6,12 @@ client.on("ready", () => {
   console.log("I am ready!");
 });
 
+client.on("guildMemberAdd", function(member){
+  member.send("Welcome to the server!");
+  let memberRole = member.guild.roles.find("name", "member");
+  member.addRole(memberRole);
+});
+
 client.on("message", (message) => {
 
 
@@ -71,6 +77,13 @@ const command = args.shift().toLowerCase();
     message.channel.bulkDelete(actualNumber).then(() => {//does the deleting
     message.channel.send(`Cleared ${args[0]} messages. ${swablu}`).then(msg => msg.delete(5000));//sends conformation, then deletes conformation
   });
+  break;
+
+  case "junior": //gives junior role
+  let juniorRole = message.member.guild.roles.find("name", "junior");
+  message.member.addRole(juniorRole);
+  message.channel.send('Welcome to the fun group.');
+
   break;
 
   }
