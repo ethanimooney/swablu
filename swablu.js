@@ -81,7 +81,7 @@ const command = args.shift().toLowerCase();
 
   case "junior": //gives junior role
   
-  let juniorRole = message.guild.roles.find("name", "juniors");
+  const juniorRole = message.guild.roles.find("name", "juniors");
   message.author.addRole(juniorRole);
   
 
