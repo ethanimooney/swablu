@@ -6,12 +6,6 @@ client.on("ready", () => {
   console.log("I am ready!");
 });
 
-client.on("guildMemberAdd", function(member){
-  member.send("Welcome to the server!");
-  let memberRole = member.guild.roles.find("name", "member");
-  member.addRole(memberRole);
-});
-
 client.on("message", (message) => {
 
 
@@ -81,7 +75,7 @@ const command = args.shift().toLowerCase();
 
     case "junior": //gives junior role to sender
   
-    let juniorRole = message.guild.roles.find("name", "juniors");
+    const juniorRole = message.guild.roles.find("name", "juniors");
     message.member.addRole(juniorRole);
   
 
