@@ -76,7 +76,7 @@ const command = args.shift().toLowerCase();
     case "junior": //gives junior role to sender
   
     const juniorRole  = message.guild.roles.find(role => role.name === "juniors");
-    member.addRole(juniorRole);
+    member.addRole(juniorRole).catch(console.error);
   
 
   break;
