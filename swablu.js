@@ -76,7 +76,7 @@ const command = args.shift().toLowerCase();
     case "junior": //gives junior role to sender
   
     let juniorRole  = message.guild.roles.find(role => role.name === "juniors");
-    member.addRole(juniorRole);
+    message.author.addRole(juniorRole).catch(console.error);
     message.channel.send('Welcome to the fun group!');
   
 
