@@ -77,7 +77,6 @@ const command = args.shift().toLowerCase();
   
     let juniorRole  = message.guild.roles.find(role => role.name === "juniors");
     message.author.addRole(juniorRole).catch(console.error);
-    message.channel.send('Welcome to the fun group!');
   
 
   break;
