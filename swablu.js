@@ -80,27 +80,68 @@ const command = args.shift().toLowerCase();
     
   break;
 
-  case "senior": //gives junior role to sender
+  case "senior": //gives senior role to sender
 
     message.member.addRole('472534724032724992');
     message.channel.send('Welcome to the cool kids.');
     
   break;
 
-  case "master": //gives junior role to sender
+  case "master": //gives master role to sender
 
     message.member.addRole('472534767024340993');
-    message.channel.send('Welcome to the real OGs.');
+    message.channel.send('Welcome to the real OG\'s.');
     
   break;
 
-  case "parent": //gives junior role to sender
+  case "parent": //gives parent role to sender
 
     message.member.addRole('472537891776626689');
     message.channel.send('Welcome to the best group!');
     
   break;
 
+  case "prices": //sends a list of common price sites
+
+    message.channel.send('TCG Player : https://bit.ly/2wBWSk7');
+
+  break;
+
+  case "proxy": //sends a list of proxy sites
+
+    message.channel.send('Limitless : https://bit.ly/2MLcexB \nProxycroak (Japanese Proxies) : https://bit.ly/2LUMmtQ');
+
+  break;
+
+  case "rotation": //sends the current rotation
+
+    message.channel.send('The 2019 Standard Rotation is Sun and Moon Base Set - Current. \nFind the current TCG Standard Rotation here : http://bit.ly/2NQckQD');
+
+  break;
+
+  case "location":
+
+    message.channel.send('We meet most Saturdays at Al\'s Sports Cards & Gaming.\n\nHere\'s the address!\n16 E 15th St, Edmond, OK 73013');
+
+  break;
+
+  case "playerid":
+
+    message.channel.send('Find or create a player id here : http://bit.ly/2v9RIve');
+
+  break;
+
+  case "commands":
+
+    message.channel.send('!prices - sends list of price sites\n!proxies - sends list of proxy sites\n!playerid - sends link to create or find your player id\n!rotation - sends link to current rotation\n!location - sends the location of our meetup space');
+
+  break;
+
+  case "acommands":
+
+    message.channel.send('!ban -- bans user\n!tempban -- temporarily bans a user from the server\n!clear -- clears X messages from a chat\n!infractions -- displays a user\'s infractions\n!kick -- kicks user\n!mute -- mutes user\n!tempmute -- temporarily mutes user\n!role-info -- gives info on a role\n!server-info -- gives info about the server\n!slowmode -- enables/disables slow mode\n!unmute -- unmutes a user\n!user-info -- gives info on user\n!warn -- warns a user');
+
+  break;
   }
 
   
