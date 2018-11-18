@@ -75,37 +75,57 @@ const command = args.shift().toLowerCase();
 
     case "junior": //gives junior role to sender
 
-    if(message.member.roles.has('472534683205500936')) {
-      message.reply(`Uhh you already are one dummy :swablu:`);
+    message.delete();
+    
+    if(message.member.roles.has('472534724032724992' || '472534767024340993' || '472537891776626689')){
+      message.channel.send('Aren\'t you already in a group? Contact a mod if you need a change! :swablu:');
+    }
+    else if(message.member.roles.has('472534683205500936')) {
+      message.channel.send(`Uhh you already are one dummy :swablu:`);
     }
     else{
       message.member.addRole('472534683205500936');
       message.channel.send('Welcome to the fun group!');
     }
-
-    
-    
   break;
 
   case "senior": //gives senior role to sender
 
-    message.member.addRole('472534724032724992');
-    message.channel.send('Welcome to the cool kids.');
-    
+    message.delete();
+
+    if(message.member.roles.has('472534724032724992')) {
+      message.channel.send(`Uhh you already are one dummy :swablu:`);
+    }
+    else{
+      message.member.addRole('472534724032724992');
+      message.channel.send('Welcome to the cool kids.');
+    }
   break;
 
   case "master": //gives master role to sender
 
-    message.member.addRole('472534767024340993');
-    message.channel.send('Welcome to the real OG\'s.');
-    
+    message.delete();
+
+    if(message.member.roles.has('472534767024340993')) {
+      message.channel.send(`Uhh you already are one dummy :swablu:`);
+    }
+    else{
+      message.member.addRole('472534767024340993');
+      message.channel.send('Welcome to the real OG\'s.');
+    }
   break;
 
   case "parent": //gives parent role to sender
 
-    message.member.addRole('472537891776626689');
-    message.channel.send('Welcome to the best group!');
-    
+    message.delete();
+
+    if(message.member.roles.has('472537891776626689')) {
+      message.channel.send(`Uhh you already are one dummy :swablu:`);
+    }
+    else{
+      message.member.addRole('472537891776626689');
+      message.channel.send('Welcome to the best group.');
+    }
   break;
 
   case "prices": //sends a list of common price sites
