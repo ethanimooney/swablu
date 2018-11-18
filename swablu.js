@@ -80,6 +80,27 @@ const command = args.shift().toLowerCase();
     
   break;
 
+  case "senior": //gives junior role to sender
+
+    message.member.addRole('472534724032724992');
+    message.channel.send('Welcome to the cool kids.');
+    
+  break;
+
+  case "master": //gives junior role to sender
+
+    message.member.addRole('472534767024340993');
+    message.channel.send('Welcome to the real OGs.');
+    
+  break;
+
+  case "parent": //gives junior role to sender
+
+    message.member.addRole('472537891776626689');
+    message.channel.send('Welcome to the best group!');
+    
+  break;
+
   }
 
   
