@@ -139,7 +139,7 @@ const command = args.shift().toLowerCase();
 
   case "commands":
 
-    message.channel.send('!prices - sends list of price sites\n!proxies - sends list of proxy sites\n!playerid - sends link to create or find your player id\n!rotation - sends link to current rotation\n!location - sends the location of our meetup space\n!facebook - sends a link to our Facebook page');
+    message.channel.send('!prices -  sends list of price sites\n!proxies - sends list of proxy sites\n!playerid - sends link to create or find your player id\n!rotation - sends link to current rotation\n!location - sends the location of our meetup space\n!facebook - sends a link to our Facebook page');
 
   break;
 
