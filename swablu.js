@@ -121,7 +121,7 @@ const command = args.shift().toLowerCase();
 
   case "location":
 
-    message.channel.send('We meet most Saturdays at Al\'s Sports Cards & Gaming.\n\nHere\'s the address!\n16 E 15th St, Edmond, OK 73013');
+    message.channel.send('We meet Saturdays at Al\'s Sports Cards & Gaming.\n\nHere\'s the address!\n16 E 15th St, Edmond, OK 73013');
 
   break;
 
@@ -131,9 +131,15 @@ const command = args.shift().toLowerCase();
 
   break;
 
+  case "facebook":
+
+    message.channel.send('Find out Facebook page here : www.facebook.com/pokemonedmond/');
+
+  break;
+
   case "commands":
 
-    message.channel.send('!prices - sends list of price sites\n!proxies - sends list of proxy sites\n!playerid - sends link to create or find your player id\n!rotation - sends link to current rotation\n!location - sends the location of our meetup space');
+    message.channel.send('!prices - sends list of price sites\n!proxies - sends list of proxy sites\n!playerid - sends link to create or find your player id\n!rotation - sends link to current rotation\n!location - sends the location of our meetup space\n!facebook - sends a link to our Facebook page');
 
   break;
 
