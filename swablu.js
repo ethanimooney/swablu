@@ -121,7 +121,7 @@ const command = args.shift().toLowerCase();
 
   case "location":
 
-    message.channel.send('We meet Saturdays at Al\'s Sports Cards & Gaming.\n\nHere\'s the address!\n16 E 15th St, Edmond, OK 73013');
+    message.channel.send('We meetgit Saturdays at Al\'s Sports Cards & Gaming.\n\nHere\'s the address!\n16 E 15th St, Edmond, OK 73013');
 
   break;
 
