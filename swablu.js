@@ -75,8 +75,15 @@ const command = args.shift().toLowerCase();
 
     case "junior": //gives junior role to sender
 
-    message.member.addRole('472534683205500936');
-    message.channel.send('Welcome to the fun group!');
+    if(message.member.roles.has('472534683205500936')) {
+      message.reply(`Uhh you already are one dummy :swablu:`);
+    }
+    else{
+      message.member.addRole('472534683205500936');
+      message.channel.send('Welcome to the fun group!');
+    }
+
+    
     
   break;
 
