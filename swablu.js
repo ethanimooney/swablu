@@ -148,7 +148,15 @@ const command = args.shift().toLowerCase();
     message.channel.send('!ban -- bans user\n!tempban -- temporarily bans a user from the server\n!clear -- clears X messages from a chat\n!infractions -- displays a user\'s infractions\n!kick -- kicks user\n!mute -- mutes user\n!tempmute -- temporarily mutes user\n!role-info -- gives info on a role\n!server-info -- gives info about the server\n!slowmode -- enables/disables slow mode\n!unmute -- unmutes a user\n!user-info -- gives info on user\n!warn -- warns a user');
 
   break;
+
+  case "swablu":
+
+    message.channel.send('Huh? What? :swablu:');
+
+  break;
   }
+
+
 
   
 
