@@ -107,7 +107,7 @@ const command = args.shift().toLowerCase();
 
   break;
 
-  case "proxy": //sends a list of proxy sites
+  case "proxies": //sends a list of proxy sites
 
     message.channel.send('Limitless : https://bit.ly/2MLcexB \nProxycroak (Japanese Proxies) : https://bit.ly/2LUMmtQ');
 
