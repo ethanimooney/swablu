@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const config = require("./config.json");
+let prefix = '!';
 
 client.on("ready", () => {
   console.log("I am ready!");
@@ -193,4 +194,4 @@ const command = args.shift().toLowerCase();
 
 });
 
-client.login(config.token);
+client.login(process.env.token);
