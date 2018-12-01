@@ -74,14 +74,14 @@ const command = args.shift().toLowerCase();
   break;
 
     case "junior": //gives junior role to sender
-    const swablu = client.emojis.find("name", "swablu");//creates swablu emoji
+
     message.delete();
 
     if(message.member.roles.has('472534724032724992' || '472534767024340993' || '472537891776626689')){
       message.channel.send('Aren\'t you already in a group? Contact a mod if you need a change! :swablu:');
     }
     else if(message.member.roles.has('472534683205500936')) {
-      message.channel.send(`Uhh you already are one... ${swablu}`);
+      message.channel.send(`Uhh you already are one...`);
     }
     else{
       message.member.addRole('472534683205500936');
