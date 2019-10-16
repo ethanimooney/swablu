@@ -19,7 +19,7 @@ const command = args.shift().toLowerCase();
     case "announce": //announces message specified in speified channel
       let channelid = args.slice(0,1).join(" "); //selects first argument, the channelid
       let text = args.slice(1).join(" "); //selects second argument, message
-     
+
       if(!message.guild.channels.find("name", channelid)){//if specified channel does not exist or one is not specified, throws error
         return message.reply("looks like you did't specify a channel or you spelled it wrong, try again.");
       }
@@ -32,12 +32,12 @@ const command = args.shift().toLowerCase();
     break;
 
     case "kick": //kicks user, citing the reason given by the kicker
-    
+
     const modRole = message.guild.roles.find("name", "professors");
     const jrmodRole = message.guild.roles.find("name", "assistant professors"); //finds mod role
     const botRole = message.guild.roles.find("name", "bots"); //finds botmod role
     let kickMember = message.mentions.members.first();
-    let reason = args.slice(1).join(" "); 
+    let reason = args.slice(1).join(" ");
     message.delete();
 
     if(kickMember.roles.has(modRole.id || botRole.id || jrmodROle.id)){ //blocks kicking of a mod
@@ -75,7 +75,7 @@ const command = args.shift().toLowerCase();
   break;
 
     case "junior": //gives junior role to sender
-    
+
     message.delete();
 
     if(message.member.roles.has('472534724032724992') || message.member.roles.has('472534767024340993') || message.member.roles.has('472537891776626689')){
@@ -91,7 +91,7 @@ const command = args.shift().toLowerCase();
   break;
 
   case "senior": //gives senior role to sender
-  
+
     message.delete();
 
     if(message.member.roles.has('472534683205500936') || message.member.roles.has('472534767024340993') || message.member.roles.has('472537891776626689')){
@@ -195,8 +195,8 @@ const command = args.shift().toLowerCase();
 
 
 
-  
+
 
 });
 
-client.login(config.token);
+client.login(config.process.env.ACCESS_TOKEN);
