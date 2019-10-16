@@ -1,4 +1,4 @@
 {
-  "token": client.login(process.env.ACCESS_TOKEN);,
+  "token": process.env.ACCESS_TOKEN,
   "prefix": "!"
 }
