@@ -199,4 +199,4 @@ const command = args.shift().toLowerCase();
 
 });
 
-client.login(config.process.env.ACCESS_TOKEN);
+client.login(process.env.ACCESS_TOKEN);
