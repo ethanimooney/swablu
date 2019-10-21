@@ -187,7 +187,7 @@ const command = args.shift().toLowerCase();
   break;
 
   case "swablu":
-
+    const swablu = client.emojis.find("name", "swablu");
     message.channel.send('Huh? What? ${swablu}');
 
   break;
