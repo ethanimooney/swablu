@@ -33,61 +33,61 @@ const command = args.shift().toLowerCase();
 
     case "kick": //kicks user, citing the reason given by the kicker
 
-    const modRole = message.guild.roles.find("name", "professors");
-    const jrmodRole = message.guild.roles.find("name", "assistant professors"); //finds mod role
-    const botRole = message.guild.roles.find("name", "bots"); //finds botmod role
-    let kickMember = message.mentions.members.first();
-    let reason = args.slice(1).join(" ");
-    message.delete();
+      const modRole = message.guild.roles.find("name", "professors");
+      const jrmodRole = message.guild.roles.find("name", "assistant professors"); //finds mod role
+      const botRole = message.guild.roles.find("name", "bots"); //finds botmod role
+      let kickMember = message.mentions.members.first();
+      let reason = args.slice(1).join(" ");
+      message.delete();
 
-    if(kickMember.roles.has(modRole.id || botRole.id || jrmodROle.id)){ //blocks kicking of a mod
-      message.reply("You can't kick a mod, fool.")
-    }
-    if (!modRole){ //checks if there is a mod role in the server
-      return console.log("The Mods role does not exist");
-    }
-    if (!message.member.roles.has(modRole.id)){ //checks if command user is mod
-      return message.reply("You can't use this command.");
-    }
-    if(reason == ""){ //if no reason is supplied it asks for one
-      return message.reply("For what reason? Try again.");
-    }
+      if(kickMember.roles.has(modRole.id || botRole.id || jrmodROle.id)){ //blocks kicking of a mod
+        message.reply("You can't kick a mod, fool.")
+      }
+      if (!modRole){ //checks if there is a mod role in the server
+        return console.log("The Mods role does not exist");
+      }
+      if (!message.member.roles.has(modRole.id)){ //checks if command user is mod
+        return message.reply("You can't use this command.");
+      }
+      if(reason == ""){ //if no reason is supplied it asks for one
+        return message.reply("For what reason? Try again.");
+      }
 
-    kickMember.kick(reason).then(member => { //kicks user and gives reason why
-        message.channel.send(`${kickMember} was succesfully kicked for "${reason}"`);
-    });
+      kickMember.kick(reason).then(member => { //kicks user and gives reason why
+          message.channel.send(`${kickMember} was succesfully kicked for "${reason}"`);
+      });
     break;
 
-    case "clear"://clears a specified amount of messages from chat
-    const swablu = client.emojis.find("name", "swablu");//creates swablu emoji
+      case "clear"://clears a specified amount of messages from chat
+      const swablu = client.emojis.find("name", "swablu");//creates swablu emoji
 
 
-    let clearNumber = parseInt(args[0], 10);//converts number to an int
-    let actualNumber = (clearNumber + 1);//sets delete number to 1 higher so it deletes command invocation
+      let clearNumber = parseInt(args[0], 10);//converts number to an int
+      let actualNumber = (clearNumber + 1);//sets delete number to 1 higher so it deletes command invocation
 
-    if(!args[0]){
-      return message.channel.send("Erm, how many? Try again.");
-    }//if no amount to delete is given, throws error
+      if(!args[0]){
+        return message.channel.send("Erm, how many? Try again.");
+      }//if no amount to delete is given, throws error
 
-    message.channel.bulkDelete(actualNumber).then(() => {//does the deleting
-    message.channel.send(`Cleared ${args[0]} messages. ${swablu}`).then(msg => msg.delete(5000));//sends conformation, then deletes conformation
-  });
+      message.channel.bulkDelete(actualNumber).then(() => {//does the deleting
+      message.channel.send(`Cleared ${args[0]} messages. ${swablu}`).then(msg => msg.delete(5000));//sends conformation, then deletes conformation
+    });
   break;
 
     case "junior": //gives junior role to sender
 
-    message.delete();
+      message.delete();
 
-    if(message.member.roles.has('472534724032724992') || message.member.roles.has('472534767024340993') || message.member.roles.has('472537891776626689')){
-      message.channel.send(`Aren\'t you already in a group? Contact a mod if you need a change! ${swablu}`);
-    }
-    else if(message.member.roles.has('472534683205500936')) {
-      message.channel.send(`Uhh you already are one... ${swablu}`);
-    }
-    else{
-      message.member.addRole('472534683205500936');
-      message.channel.send('Welcome to the fun group!');
-    }
+      if(message.member.roles.has('472534724032724992') || message.member.roles.has('472534767024340993') || message.member.roles.has('472537891776626689')){
+        message.channel.send(`Aren\'t you already in a group? Contact a mod if you need a change! ${swablu}`);
+      }
+      else if(message.member.roles.has('472534683205500936')) {
+        message.channel.send(`Uhh you already are one... ${swablu}`);
+      }
+      else{
+        message.member.addRole('472534683205500936');
+        message.channel.send('Welcome to the fun group!');
+      }
   break;
 
   case "senior": //gives senior role to sender
@@ -187,15 +187,11 @@ const command = args.shift().toLowerCase();
   break;
 
   case "swablu":
-    
+
     message.channel.send('Huh? What? ${swablu}');
 
   break;
-  }
-
-
-
-
+}
 
 });
 
