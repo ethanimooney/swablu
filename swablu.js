@@ -146,13 +146,13 @@ const command = args.shift().toLowerCase();
 
   case "proxies": //sends a list of proxy sites
 
-    message.channel.send('Limitless : https://bit.ly/2MLcexB \nProxycroak (Japanese Proxies) : https://bit.ly/2LUMmtQ');
+    message.channel.send('Limitless : https://bit.ly/2MLcexB');
 
   break;
 
   case "rotation": //sends the current rotation
 
-    message.channel.send('The 2019 Standard Rotation is Sun and Moon Base Set - Current. \nFind the current TCG Standard Rotation here : http://bit.ly/2NQckQD');
+    message.channel.send('The 2020 Standard Rotation is Ultra Prism - Current. \nFind the current TCG Standard Rotation here : bit.ly/2UlfT4g');
 
   break;
 
