@@ -6,10 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ethanimooney/swablu.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ethanimooney/swablu/issues"
+  },
+  "homepage": "https://github.com/ethanimooney/swablu#readme",
   "dependencies": {
-    "discord.js": "^11.3.2"
+    "discord.js": "^14.6.0"
   }
 }
